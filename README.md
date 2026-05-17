@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🍽️ ARISE Eats
+# ARISE Eats
 
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -9,30 +9,32 @@
 [![Stripe](https://img.shields.io/badge/Stripe-008CDD?style=for-the-badge&logo=stripe&logoColor=white)](https://stripe.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
-**An AI-powered food delivery app with gamification, built with Next.js**
-
-Order from local restaurants, get meal suggestions from an AI concierge, and earn XP for every order you place.
-
----
-
-**Author:** Shreya P Shetty
+**A modern, AI-powered food delivery platform with gamification — built with Next.js 16**
 
 </div>
 
 ---
 
-## ✨ Features
+## About the Project
 
-- 🍜 Browse **30+ restaurants** across cuisines — Indian, Italian, Japanese, Korean, Thai, and more
-- 🛒 Add items to cart, apply coupon codes, and pay via UPI, card, or net banking
-- 🤖 **ARIA**, the in-app AI coach, recommends meals based on your mood and eating patterns
-- 🎮 Gamification layer: XP, levels, daily quests, streaks, and a community leaderboard
-- 🎙️ Voice input support for logging meals hands-free
-- 🗺️ Live walking map (Explore tab) with nearby food spots and XP rewards
+ARISE Eats is a full-stack food delivery application that goes beyond simple ordering. It combines the convenience of browsing and ordering from local restaurants with an intelligent AI concierge (ARIA) that learns your preferences and suggests meals based on your mood, dietary habits, and past orders. On top of that, a gamification layer keeps users engaged through XP rewards, daily quests, streaks, and a community leaderboard — turning everyday meals into a fun, rewarding experience.
+
+The idea behind ARISE Eats is to make food ordering feel personal and engaging rather than transactional. Whether you are discovering a new cuisine, tracking your eating habits, or competing with friends on the leaderboard, the app is designed to add value to every interaction.
 
 ---
 
-## 🛠️ Tech Stack
+## Features
+
+- Browse 30+ restaurants across cuisines including Indian, Italian, Japanese, Korean, Thai, and more
+- Add items to cart, apply coupon codes, and pay via UPI, card, or net banking
+- ARIA — an in-app AI coach that recommends meals based on your mood and eating patterns
+- Gamification system with XP, levels, daily quests, streaks, and a community leaderboard
+- Voice input support for logging meals hands-free
+- Live walking map (Explore tab) showing nearby food spots with XP rewards
+
+---
+
+## Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
@@ -41,11 +43,11 @@ Order from local restaurants, get meal suggestions from an AI concierge, and ear
 | Styling | Tailwind CSS v4 + Radix UI + shadcn/ui |
 | Backend | Supabase (auth, database, realtime) |
 | Payments | Stripe |
-| AI & Voice | Groq + Sarvam |
+| AI and Voice | Groq + Sarvam |
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -86,29 +88,29 @@ Open [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 🎟️ Coupon Codes
+## Coupon Codes
 
 | Code | Discount |
 |------|----------|
-| `WELCOME50` | 50% off, up to ₹150 |
-| `SAVE100` | ₹100 off on orders above ₹499 |
-| `FREEDEL` | Free delivery on orders above ₹299 |
+| `WELCOME50` | 50% off, up to Rs.150 |
+| `SAVE100` | Rs.100 off on orders above Rs.499 |
+| `FREEDEL` | Free delivery on orders above Rs.299 |
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
-app/              → Pages (Next.js App Router)
-components/       → Reusable UI components
-lib/              → Types, context, utilities
-supabase/         → SQL schema and seed files
-hooks/            → Custom React hooks
+app/              Pages (Next.js App Router)
+components/       Reusable UI components
+lib/              Types, context, utilities
+supabase/         SQL schema and seed files
+hooks/            Custom React hooks
 ```
 
 ---
 
-## 📝 Notes
+## Notes
 
 - The app requires a Supabase project to function. Without it, restaurant listings and cart will not load.
 - Stripe is only needed if you want real payment flows. The checkout page works in test mode with Stripe test keys.
@@ -118,6 +120,6 @@ hooks/            → Custom React hooks
 
 <div align="center">
 
-Made with ❤️ by **Shreya P Shetty**
+Built by **Shreya P Shetty**
 
 </div>
