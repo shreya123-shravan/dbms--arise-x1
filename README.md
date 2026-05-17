@@ -13,7 +13,7 @@
 
 **A modern, AI-powered food delivery platform with gamification — built with Next.js 16**
 
-[View Demo](#) | [Report Bug](../../issues) | [Request Feature](../../issues)
+https://kmp-plagiarism-detector.vercel.app/
 
 </div>
 
