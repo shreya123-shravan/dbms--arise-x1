@@ -1,0 +1,565 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+/* ============================================================
+   ARISE-X1 — Pixel-Art Gaming Design System
+   Reference: dark purple/navy bg, neon green, hot pink/magenta,
+   amber gold, pixel font, scanline overlays, XP-style glows
+   ============================================================ */
+
+@custom-variant dark (&:is(.dark *));
+:root {
+  /*
+   * ARISE-X1 Food-Forward Palette
+   * Background: Rich eggplant-purple (deep, warm, not cold)
+   * Primary:    Lime-citrus green  — pops against food photos
+   * Accent:     Saffron / turmeric — warm, edible, food-adjacent
+   * Secondary accent: Coral-magenta for highlights
+   * All chosen to complement greens, reds, yellows in food photography
+   */
+
+  /* ── Background: warm eggplant / aubergine (hint of red, not cold blue) ── */
+  --background:  oklch(0.09 0.055 300);   /* deep warm purple        */
+  --foreground:  oklch(0.97 0.008 80);    /* warm off-white          */
+  --card:        oklch(0.13 0.06 298);    /* slightly lifted purple   */
+  --card-foreground: oklch(0.97 0.008 80);
+  --popover:     oklch(0.13 0.06 298);
+  --popover-foreground: oklch(0.97 0.008 80);
+
+  /* ── Primary: warm lime-citrus green (complements greens in food photos) ── */
+  --primary:          oklch(0.84 0.24 142);   /* bright lime-green    */
+  --primary-foreground: oklch(0.09 0.04 300); /* dark bg on green     */
+
+  /* ── Secondary: warm elevated surface ── */
+  --secondary:          oklch(0.17 0.065 295);
+  --secondary-foreground: oklch(0.97 0.008 80);
+
+  /* ── Muted: warm purple-taupe ── */
+  --muted:            oklch(0.19 0.055 295);
+  --muted-foreground: oklch(0.60 0.04 285);
+
+  /* ── Accent: saffron / warm gold — evokes spices, turmeric, food warmth ── */
+  --accent:           oklch(0.80 0.18 72);    /* saffron orange-gold  */
+  --accent-foreground: oklch(0.09 0.04 300);
+
+  /* ── Destructive: vivid coral-red ── */
+  --destructive:      oklch(0.65 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+
+  /* ── Borders & inputs ── */
+  --border: oklch(0.24 0.07 295);
+  --input:  oklch(0.19 0.06 295);
+  --ring:   oklch(0.84 0.24 142);
+
+  /* ── Charts ── */
+  --chart-1: oklch(0.84 0.24 142);   /* lime-green               */
+  --chart-2: oklch(0.80 0.18 72);    /* saffron gold             */
+  --chart-3: oklch(0.70 0.22 340);   /* coral-magenta            */
+  --chart-4: oklch(0.62 0.20 285);   /* violet                   */
+  --chart-5: oklch(0.55 0.03 270);   /* grey                     */
+
+  /* ── Raw CSS color tokens (pixel-art / gaming layer) ── */
+  --pixel-green:      #4ade80;    /* warm lime green              */
+  --pixel-pink:       #f472b6;    /* warm rose-pink               */
+  --pixel-amber:      #f59e0b;    /* amber / saffron              */
+  --pixel-purple:     #7c3aed;    /* deep violet glow             */
+  --pixel-cyan:       #34d399;    /* warm mint/emerald            */
+  --pixel-dark:       #0f0814;    /* deepest warm-dark bg         */
+  --pixel-panel:      #1c0f2a;    /* panel card bg                */
+  --pixel-border:     #4c1d95;    /* panel border                 */
+
+  /* ── Warm food-palette blocks ── */
+  --amber:   oklch(0.80 0.18 72);
+  --amber-foreground: oklch(0.09 0.04 300);
+  --cream:   oklch(0.96 0.025 82);
+  --cream-foreground: oklch(0.09 0.04 300);
+  --forest:  oklch(0.36 0.10 152);
+  --forest-foreground: oklch(0.97 0.008 80);
+
+  /* ── Radius: slightly more generous for a premium food-app feel ── */
+  --radius: 0.5rem;
+
+  /* ── Sidebar ── */
+  --sidebar:          oklch(0.11 0.055 298);
+  --sidebar-foreground: oklch(0.97 0.008 80);
+  --sidebar-primary:  oklch(0.84 0.24 142);
+  --sidebar-primary-foreground: oklch(0.09 0.04 300);
+  --sidebar-accent:   oklch(0.17 0.065 295);
+  --sidebar-accent-foreground: oklch(0.97 0.008 80);
+  --sidebar-border:   oklch(0.24 0.07 295);
+  --sidebar-ring:     oklch(0.84 0.24 142);
+}
+
+.dark {
+  --background:       oklch(0.09 0.055 300);
+  --foreground:       oklch(0.97 0.008 80);
+  --card:             oklch(0.13 0.06 298);
+  --card-foreground:  oklch(0.97 0.008 80);
+  --popover:          oklch(0.13 0.06 298);
+  --popover-foreground: oklch(0.97 0.008 80);
+  --primary:          oklch(0.84 0.24 142);
+  --primary-foreground: oklch(0.09 0.04 300);
+  --secondary:        oklch(0.17 0.065 295);
+  --secondary-foreground: oklch(0.97 0.008 80);
+  --muted:            oklch(0.19 0.055 295);
+  --muted-foreground: oklch(0.60 0.04 285);
+  --accent:           oklch(0.80 0.18 72);
+  --accent-foreground: oklch(0.09 0.04 300);
+  --destructive:      oklch(0.65 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border:           oklch(0.24 0.07 295);
+  --input:            oklch(0.19 0.06 295);
+  --ring:             oklch(0.84 0.24 142);
+  --sidebar:          oklch(0.11 0.055 298);
+  --sidebar-foreground: oklch(0.97 0.008 80);
+  --sidebar-primary:  oklch(0.84 0.24 142);
+  --sidebar-primary-foreground: oklch(0.09 0.04 300);
+  --sidebar-accent:   oklch(0.17 0.065 295);
+  --sidebar-accent-foreground: oklch(0.97 0.008 80);
+  --sidebar-border:   oklch(0.24 0.07 295);
+  --sidebar-ring:     oklch(0.84 0.24 142);
+}
+
+@theme inline {
+  /* ── Pixel-Art Fonts ── */
+  --font-sans:  'Orbitron', 'Press Start 2P', system-ui, sans-serif;
+  --font-mono:  'VT323', 'Press Start 2P', ui-monospace, monospace;
+  --font-pixel: 'Press Start 2P', 'Courier New', monospace;
+
+  --color-background:   var(--background);
+  --color-foreground:   var(--foreground);
+  --color-card:         var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover:      var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary:      var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary:    var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted:        var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent:       var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive:  var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border:       var(--border);
+  --color-input:        var(--input);
+  --color-ring:         var(--ring);
+  --color-chart-1:      var(--chart-1);
+  --color-chart-2:      var(--chart-2);
+  --color-chart-3:      var(--chart-3);
+  --color-chart-4:      var(--chart-4);
+  --color-chart-5:      var(--chart-5);
+  --color-amber:        var(--amber);
+  --color-amber-foreground: var(--amber-foreground);
+  --color-cream:        var(--cream);
+  --color-cream-foreground: var(--cream-foreground);
+  --color-forest:       var(--forest);
+  --color-forest-foreground: var(--forest-foreground);
+  --radius-sm:  calc(var(--radius) - 2px);
+  --radius-md:  var(--radius);
+  --radius-lg:  calc(var(--radius) + 4px);
+  --radius-xl:  calc(var(--radius) + 8px);
+  --color-sidebar:      var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring:   var(--sidebar-ring);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    /* Pixel-crisp rendering for small icons / pixel art assets */
+    image-rendering: pixelated;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Orbitron', system-ui, sans-serif;
+    /* Warm scanline overlay — food photo friendly (low opacity) */
+    background-image:
+      radial-gradient(ellipse 90% 60% at 50% 0%, rgba(124,58,237,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 50% at 90% 80%, rgba(245,158,11,0.10) 0%, transparent 70%),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(0, 0, 0, 0.06) 3px,
+        rgba(0, 0, 0, 0.06) 4px
+      );
+  }
+
+  h1, h2, h3 {
+    font-family: 'Orbitron', 'Press Start 2P', system-ui, sans-serif;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* Monospace / eyebrow text defaults to VT323 (retro terminal) */
+  .font-mono, code, kbd {
+    font-family: 'VT323', ui-monospace, monospace;
+    font-size: 1.1em;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+@layer utilities {
+
+  /* ── Pixel-art font helpers ── */
+  .font-pixel {
+    font-family: 'Press Start 2P', monospace;
+    line-height: 1.6;
+  }
+  .font-orbitron {
+    font-family: 'Orbitron', system-ui, sans-serif;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .font-vt323 {
+    font-family: 'VT323', monospace;
+    font-size: 1.25em;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── Neon text glows ── */
+  .text-glow-green {
+    color: var(--pixel-green);
+    text-shadow:
+      0 0 8px var(--pixel-green),
+      0 0 20px var(--pixel-green),
+      0 0 40px rgba(57, 255, 20, 0.5);
+  }
+  .text-glow-pink {
+    color: var(--pixel-pink);
+    text-shadow:
+      0 0 8px var(--pixel-pink),
+      0 0 20px var(--pixel-pink),
+      0 0 40px rgba(255, 20, 147, 0.5);
+  }
+  .text-glow-amber {
+    color: var(--pixel-amber);
+    text-shadow:
+      0 0 8px var(--pixel-amber),
+      0 0 20px var(--pixel-amber),
+      0 0 40px rgba(255, 165, 0, 0.5);
+  }
+  .text-glow-cyan {
+    color: var(--pixel-cyan);
+    text-shadow:
+      0 0 8px var(--pixel-cyan),
+      0 0 20px var(--pixel-cyan),
+      0 0 40px rgba(0, 255, 231, 0.4);
+  }
+
+  /* ── Box glows (buttons, cards, icons) ── */
+  .glow-primary {
+    box-shadow:
+      0 0 12px color-mix(in oklch, var(--primary) 60%, transparent),
+      0 0 32px color-mix(in oklch, var(--primary) 35%, transparent),
+      inset 0 1px 0 rgba(57, 255, 20, 0.15);
+  }
+  .glow-accent {
+    box-shadow:
+      0 0 12px color-mix(in oklch, var(--accent) 60%, transparent),
+      0 0 32px color-mix(in oklch, var(--accent) 35%, transparent),
+      inset 0 1px 0 rgba(255, 20, 147, 0.15);
+  }
+  .glow-amber {
+    box-shadow:
+      0 0 12px rgba(255, 165, 0, 0.5),
+      0 0 32px rgba(255, 165, 0, 0.25);
+  }
+  .glow-purple {
+    box-shadow:
+      0 0 20px rgba(139, 0, 255, 0.5),
+      0 0 48px rgba(139, 0, 255, 0.25);
+  }
+
+  /* ── Pixel-art glass panels (ref: "Today's Goals", "Rewards" panels) ── */
+  .glass {
+    background: color-mix(in oklch, var(--card) 55%, transparent);
+    backdrop-filter: blur(12px) saturate(130%);
+    -webkit-backdrop-filter: blur(12px) saturate(130%);
+    border: 2px solid color-mix(in oklch, var(--primary) 20%, var(--border));
+    box-shadow:
+      0 4px 24px -8px rgba(0, 0, 0, 0.8),
+      0 0 0 1px rgba(57, 255, 20, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  }
+
+  .glass-strong {
+    background: color-mix(in oklch, var(--card) 78%, transparent);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border: 2px solid color-mix(in oklch, var(--primary) 28%, var(--border));
+    box-shadow:
+      0 8px 40px -12px rgba(0, 0, 0, 0.85),
+      0 0 0 1px rgba(57, 255, 20, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  /* ── Pixel panel (ref: the chunky bordered stat/goal panels) ── */
+  .pixel-panel {
+    background: rgba(26, 10, 46, 0.85);
+    border: 3px solid var(--pixel-green);
+    box-shadow:
+      0 0 16px rgba(57, 255, 20, 0.25),
+      inset 0 0 30px rgba(57, 255, 20, 0.04);
+    image-rendering: pixelated;
+  }
+  .pixel-panel-pink {
+    background: rgba(26, 10, 46, 0.85);
+    border: 3px solid var(--pixel-pink);
+    box-shadow:
+      0 0 16px rgba(255, 20, 147, 0.3),
+      inset 0 0 30px rgba(255, 20, 147, 0.04);
+  }
+  .pixel-panel-amber {
+    background: rgba(26, 10, 46, 0.85);
+    border: 3px solid var(--pixel-amber);
+    box-shadow:
+      0 0 16px rgba(255, 165, 0, 0.3),
+      inset 0 0 30px rgba(255, 165, 0, 0.04);
+  }
+
+  /* ── Progress bar (ref: XP bar, step tracker) ── */
+  .pixel-progress {
+    height: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 2px solid var(--pixel-green);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+  }
+  .pixel-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--pixel-green), #00e600);
+    box-shadow: 0 0 8px var(--pixel-green), 0 0 20px rgba(57, 255, 20, 0.4);
+    border-radius: 1px;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* ── XP / reward badge chips (ref: "+350 XP", "+100 coin", "+1 gem") ── */
+  .xp-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.25rem 0.625rem;
+    border-radius: 4px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.65rem;
+    border: 2px solid currentColor;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .xp-badge-green {
+    color: var(--pixel-green);
+    background: rgba(57, 255, 20, 0.12);
+    box-shadow: 0 0 8px rgba(57, 255, 20, 0.3);
+  }
+  .xp-badge-amber {
+    color: var(--pixel-amber);
+    background: rgba(255, 165, 0, 0.12);
+    box-shadow: 0 0 8px rgba(255, 165, 0, 0.3);
+  }
+  .xp-badge-pink {
+    color: var(--pixel-pink);
+    background: rgba(255, 20, 147, 0.12);
+    box-shadow: 0 0 8px rgba(255, 20, 147, 0.3);
+  }
+
+  /* ── Scanline utility (apply to specific sections / hero overlays) ── */
+  .scanlines {
+    position: relative;
+  }
+  .scanlines::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.12) 2px,
+      rgba(0, 0, 0, 0.12) 4px
+    );
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  /* ── Pixel-art background aurora (matching ref deep purple nebula) ── */
+  .bg-aurora {
+    background-image:
+      radial-gradient(65% 55% at 70% 15%, rgba(139, 0, 255, 0.28) 0%, transparent 70%),
+      radial-gradient(50% 40% at 20% 65%, rgba(255, 20, 147, 0.20) 0%, transparent 70%),
+      radial-gradient(45% 35% at 50% 100%, rgba(57, 255, 20, 0.12) 0%, transparent 70%),
+      radial-gradient(35% 30% at 85% 80%, rgba(0, 255, 231, 0.10) 0%, transparent 70%);
+  }
+
+  /* ── Radial top glow for hero ── */
+  .bg-radial-glow {
+    background-image: radial-gradient(
+      65% 55% at 50% 0%,
+      rgba(57, 255, 20, 0.18) 0%,
+      rgba(139, 0, 255, 0.12) 45%,
+      transparent 70%
+    );
+  }
+
+  /* ── Pixel grid (map/explore screen) ── */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right,  rgba(57, 255, 20, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(57, 255, 20, 0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* ── Spread-band overlay gradient ── */
+  .bg-spread-fade {
+    background: linear-gradient(
+      to right,
+      var(--background) 0%,
+      color-mix(in oklch, var(--background) 90%, transparent) 28%,
+      color-mix(in oklch, var(--background) 35%, transparent) 60%,
+      transparent 100%
+    );
+  }
+
+  /* ── Amber / cream / forest blocks (backward-compatible) ── */
+  .bg-amber-block {
+    background-color: var(--pixel-amber);
+    color: oklch(0.08 0.04 290);
+  }
+  .bg-cream-block {
+    background-color: var(--cream);
+    color: var(--cream-foreground);
+  }
+  .bg-forest-block {
+    background-color: var(--forest);
+    color: var(--forest-foreground);
+  }
+
+  /* ── Tooltip pill (floating labels over hero image) ── */
+  .tooltip-pill {
+    background: rgba(26, 10, 46, 0.90);
+    color: var(--pixel-green);
+    border: 2px solid var(--pixel-green);
+    border-radius: 4px;
+    padding: 0.4rem 0.75rem;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    box-shadow:
+      0 0 12px rgba(57, 255, 20, 0.4),
+      0 8px 24px -8px rgba(0, 0, 0, 0.8);
+    transform: rotate(-2deg);
+    line-height: 1.6;
+  }
+  .tooltip-pill-rotate-r {
+    transform: rotate(2deg);
+    color: var(--pixel-pink);
+    border-color: var(--pixel-pink);
+    box-shadow:
+      0 0 12px rgba(255, 20, 147, 0.4),
+      0 8px 24px -8px rgba(0, 0, 0, 0.8);
+  }
+
+  /* ── Marquee ── */
+  @keyframes marquee-x {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .animate-marquee-x {
+    animation: marquee-x var(--marquee-duration, 40s) linear infinite;
+  }
+  .marquee-pause:hover .animate-marquee-x {
+    animation-play-state: paused;
+  }
+
+  /* ── Float / pulse ── */
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0)    rotate(-2deg); }
+    50%       { transform: translateY(-10px) rotate(-2deg); }
+  }
+  .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+  .delay-1 { animation-delay: -1s; }
+  .delay-2 { animation-delay: -2s; }
+  .delay-3 { animation-delay: -3s; }
+
+  /* ── Pulse ring (map pins, XP node) ── */
+  @keyframes pulse-ring {
+    0%   { transform: scale(1);   opacity: 0.60; }
+    100% { transform: scale(2.6); opacity: 0;    }
+  }
+  .animate-pulse-ring {
+    animation: pulse-ring 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  /* ── Pixel shimmer / neon flicker ── */
+  @keyframes neon-flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+    20%, 24%, 55% { opacity: 0.6; }
+  }
+  .animate-neon-flicker {
+    animation: neon-flicker 5s step-end infinite;
+  }
+
+  /* ── Slow spin (shimmer rings) ── */
+  @keyframes spin-slow { to { transform: rotate(360deg); } }
+  .animate-spin-slow { animation: spin-slow 12s linear infinite; }
+
+  /* ── Pixel blink (cursor / loading) ── */
+  @keyframes pixel-blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+  .animate-pixel-blink {
+    animation: pixel-blink 1s step-end infinite;
+  }
+
+  /* ── "Preparing your health journey…" loading bar style ── */
+  @keyframes loading-fill {
+    from { width: 0%; }
+    to   { width: 78%; }
+  }
+  .animate-loading-fill {
+    animation: loading-fill 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* ── Conic shimmer (XP claim ring) ── */
+  @keyframes conic-spin {
+    to { transform: rotate(360deg); }
+  }
+  .animate-conic-spin {
+    animation: conic-spin 4s linear infinite;
+  }
+
+  /* ── Pixel gradient text ── */
+  .gradient-text-pixel {
+    background: linear-gradient(135deg, var(--pixel-green) 0%, var(--pixel-cyan) 50%, var(--pixel-green) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .gradient-text-pink {
+    background: linear-gradient(135deg, var(--pixel-pink) 0%, #c026d3 50%, var(--pixel-pink) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
