@@ -265,18 +265,6 @@ Every meaningful action (placing an order, completing a quest, logging a meal) t
 
 ---
 
-## Important Notes
-
-- **Supabase is required.** Without a connected Supabase project, the app cannot load restaurants, manage carts, or authenticate users. The free tier is sufficient for development.
-
-- **Stripe works in test mode.** You do not need a live Stripe account. Use Stripe test keys and test card numbers (like `4242 4242 4242 4242`) to simulate payments.
-
-- **AI features are optional.** If you do not provide a Groq API key, the ARIA concierge and meal recommendations will not work, but the rest of the app functions normally.
-
-- **The app is mobile-first.** While it works on desktop, the UI is optimized for mobile viewports with a bottom navigation bar and touch-friendly interactions.
-
----
-
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
