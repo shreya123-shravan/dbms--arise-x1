@@ -219,4 +219,5 @@ FROM restaurants WHERE name = 'Sushi Express'
 UNION ALL
 SELECT id, 'Miso Soup', 'Traditional Japanese soup', 79.00, 'appetizer', true
 FROM restaurants WHERE name = 'Sushi Express';
+UNION ALL
 
