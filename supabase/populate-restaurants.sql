@@ -184,12 +184,7 @@ UNION ALL
 SELECT id, 'Tteokbokki', 'Spicy rice cakes', 249.00, 'appetizer', 'https://images.unsplash.com/photo-1590301157890-4810ed352733?w=400', true FROM restaurants WHERE name = 'Seoul Kitchen';
 
 -- K-Pop Bites Menu
-INSERT INTO menu_items (restaurant_id, name, description, price, category, image_url, is_available)
-SELECT id, 'Korean Fried Chicken', 'Crispy chicken with sweet sauce', 399.00, 'main', 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=400', true FROM restaurants WHERE name = 'K-Pop Bites'
-UNION ALL
-SELECT id, 'Japchae', 'Stir-fried glass noodles', 329.00, 'main', 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400', true FROM restaurants WHERE name = 'K-Pop Bites'
-UNION ALL
-SELECT id, 'Mandu', 'Korean dumplings (6 pcs)', 199.00, 'appetizer', 'https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=400', true FROM restaurants WHERE name = 'K-Pop Bites';
+
 
 -- ============================================
 -- SUMMARY
